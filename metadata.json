@@ -1,0 +1,181 @@
+{
+  "pv": {
+    "array": {
+      "sub-arrays": [
+        {
+          "name": "O1-1",
+          "module_ref": "SunPower_SPR_E20_440_COM",
+          "surface_tilt": 12,
+          "surface_azimuth": 65,
+          "modules_per_string": 11,
+          "strings_per_inverter": 10,
+          "adjustment_coefficient": 1.135
+        },
+        {
+          "name": "O1-2",
+          "module_ref": "SunPower_SPR_E20_440_COM",
+          "surface_tilt": 11,
+          "surface_azimuth": 65,
+          "modules_per_string": 10,
+          "strings_per_inverter": 3,
+          "adjustment_coefficient": 1.135
+        },
+        {
+          "name": "O2-3",
+          "module_ref": "SunPower_SPR_E20_440_COM",
+          "surface_tilt": 11,
+          "surface_azimuth": 65,
+          "modules_per_string": 10,
+          "strings_per_inverter": 3,
+          "adjustment_coefficient": 1.135
+        },
+        {
+          "name": "O2-4",
+          "module_ref": "SunPower_SPR_E20_440_COM",
+          "surface_tilt": 12,
+          "surface_azimuth": 65,
+          "modules_per_string": 11,
+          "strings_per_inverter": 10,
+          "adjustment_coefficient": 1.135
+        },
+        {
+          "name": "O3-5",
+          "module_ref": "SunPower_SPR_E20_440_COM",
+          "surface_tilt": 11,
+          "surface_azimuth": 65,
+          "modules_per_string": 10,
+          "strings_per_inverter": 3,
+          "adjustment_coefficient": 1.135
+        },
+        {
+          "name": "O3-6",
+          "module_ref": "SunPower_SPR_E20_440_COM",
+          "surface_tilt": 11,
+          "surface_azimuth": 65,
+          "modules_per_string": 11,
+          "strings_per_inverter": 5,
+          "adjustment_coefficient": 1.135
+        },
+        {
+          "name": "O3-7",
+          "module_ref": "SunPower_SPR_E20_440_COM",
+          "surface_tilt": 12,
+          "surface_azimuth": 65,
+          "modules_per_string": 11,
+          "strings_per_inverter": 5,
+          "adjustment_coefficient": 1.135
+        },
+        {
+          "name": "O4-8",
+          "module_ref": "SunPower_SPR_E20_440_COM",
+          "surface_tilt": 11,
+          "surface_azimuth": 65,
+          "modules_per_string": 10,
+          "strings_per_inverter": 5,
+          "adjustment_coefficient": 1.135
+        },
+        {
+          "name": "O4-9",
+          "module_ref": "SunPower_SPR_E20_440_COM",
+          "surface_tilt": 11,
+          "surface_azimuth": 65,
+          "modules_per_string": 11,
+          "strings_per_inverter": 4,
+          "adjustment_coefficient": 1.135
+        },
+        {
+          "name": "O4-10",
+          "module_ref": "SunPower_SPR_E20_440_COM",
+          "surface_tilt": 12,
+          "surface_azimuth": 65,
+          "modules_per_string": 11,
+          "strings_per_inverter": 3,
+          "adjustment_coefficient": 1.135
+        },
+        {
+          "name": "O4-11",
+          "module_ref": "SunPower_SPR_E20_440_COM",
+          "surface_tilt": 11,
+          "surface_azimuth": 65,
+          "modules_per_string": 11,
+          "strings_per_inverter": 1,
+          "adjustment_coefficient": 1.135
+        }
+      ],
+      "use_bifacial": false,
+      "bifacial_coefficient": 1
+    },
+    "pv_module": {
+      "A_c": 2.162,
+      "N_s": 128,
+      "PTC": 404.9,
+      "R_s": 0.477536,
+      "BIPV": "N",
+      "Date": "01/03/2019",
+      "a_ref": 3.491862,
+      "Adjust": 4.905407,
+      "T_NOCT": 45.4,
+      "I_L_ref": 6.507123,
+      "I_o_ref": 1.100632e-10,
+      "Version": "SAM 2018.11.11 r2",
+      "beta_oc": -0.28199,
+      "gamma_r": -0.424,
+      "I_mp_ref": 6.04,
+      "I_sc_ref": 6.5,
+      "R_sh_ref": 435.778625,
+      "V_mp_ref": 72.9,
+      "V_oc_ref": 86.5,
+      "alpha_sc": 0.001254,
+      "Technology": "Mono-c-Si"
+    }
+  },
+  "tz": "Indian/Reunion",
+  "Ppv": 248.31,
+  "Cbat": 365,
+  "Pbat": 200,
+  "nbPv": 4,
+  "Pbatt": 365,
+  "price": 0.208,
+  "nbBatt": 1,
+  "altitude": 400,
+  "contract": "AOCRE16",
+  "latitude": -21.03,
+  "location": "Reunion",
+  "rangeBat": 0.9,
+  "settings": {
+    "lid": 0.015,
+    "u_c": 20,
+    "u_v": 0,
+    "EgRef": 1.121,
+    "dEgdT": -0.0002677,
+    "eta_m": 0.1,
+    "iam_b": 0.05,
+    "albedo": 0.2,
+    "offset": 0,
+    "wiring": 0.02,
+    "nameOut": "Ppv_dc_mpp_th",
+    "soiling": 0.02,
+    "tracker": false,
+    "max_temp": 40,
+    "min_temp": 10,
+    "mismatch": 0.02,
+    "pressure": 101325,
+    "classname": 1,
+    "defaultTa": 25,
+    "connection": 0.005,
+    "max_wind_speed": 20,
+    "min_wind_speed": 0,
+    "alpha_absorption": 0.9,
+    "defaultWindSpeed": 0,
+    "nameplate_rating": 0
+  },
+  "soe_high": 0.95,
+  "with_PMS": true,
+  "longitude": 55.689,
+  "clientName": "Albioma",
+  "projectName": "Bourbier les Hauts",
+  "efficiencyBat": 0.923,
+  "pricePeakBonus": 0.2,
+  "use_sequantial": false,
+  "tolerance_curtail": 0.05
+}

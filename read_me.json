@@ -1,0 +1,9 @@
+{
+  "timestamp":"timestamp",
+  "P_mpp_original":"PV production returned by the model (in kW)",
+  "P_pv":"PV production measured by the model (in kW)",
+  "P_pv_setpoint":"Global Setpoint send to the PV inverter (in kW)",
+  "ghi":"Global horizontal Irradiance measured (in W/m**2)",
+  "temp":"Temperature Measured of the air measured on the plant (°C)",
+  "dispo_pv":"Availability of the total PV power plant out of 100. If all the PV power plant is available the dispo_pv is 100."
+}
