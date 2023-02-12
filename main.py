@@ -2,8 +2,8 @@
 
 """Script de calcul du productible du nouveau backend de l'appliweb"""
 # Standard imports
-from typing import List
 # Second-party imports
+from typing import List
 import pandas as pd
 import numpy as np
 import pvlib
@@ -11,8 +11,10 @@ import pytz
 import pickle
 import json
 from pathlib import Path
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error
 import csv
-
 
 GTI_STC = 1000  # W / m2
 T_STC = 25  # °C
@@ -1030,6 +1032,16 @@ def getFreq(sDate):
     # Renvoi du pas de temps
     return realFreq
 
+def linear_regresion(X,y):
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
+    regressor = LinearRegression()
+    regressor.fit(X_train, y_train)
+    y_pred = regressor.predict(X_test)
+
+    # Calculate the mean squared error
+    mse = mean_squared_error(y_test, y_pred)
+    print("Mean Squared Error:", mse)
+
 ###### Overload Model Parameters
 lid = 0.015
 
@@ -1049,7 +1061,7 @@ soiling = 0.02
 
 if __name__ == '__main__':
     metadata = load_json('metadata', folder=Path('.'))
-    data = pd.read_csv('bou.csv', sep=';', decimal=',')
+    data = pd.DataFrame(pd.read_csv('bou.csv', sep=';',decimal=','))
     data['timestamp'] = pd.to_datetime(data['timestamp'])
     data = data.set_index('timestamp', drop=True)
     data = data.tz_convert('UTC').tz_convert(metadata['tz'])
@@ -1068,4 +1080,9 @@ if __name__ == '__main__':
         for key in result:
             f.write(key)
         f.close()
+    data = pd.read_csv('bou.csv', sep=';', decimal=',')
+    X = data.iloc[:, 3:7].values
+    y = data['P_mpp_original'].values
+    # z = linear_regresion(X,y)
+
     a = 1
