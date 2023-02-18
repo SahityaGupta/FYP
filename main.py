@@ -14,6 +14,10 @@ from pathlib import Path
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
+from sklearn.preprocessing import LabelEncoder
 import csv
 
 GTI_STC = 1000  # W / m2
@@ -1042,6 +1046,25 @@ def linear_regresion(X,y):
     mse = mean_squared_error(y_test, y_pred)
     print("Mean Squared Error:", mse)
 
+
+def logistic_regression(X, y):
+    # Convert target variable to binary format
+    le = LabelEncoder()
+    y = le.fit_transform(y)
+
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
+
+    # Train the logistic regression model
+    clf = LogisticRegression()
+    clf.fit(X_train, y_train)
+
+    # Make predictions on the test set
+    y_pred = clf.predict(X_test)
+
+    # Calculate the accuracy of the model
+    acc = accuracy_score(y_test, y_pred)
+    print("Accuracy:", acc)
+
 ###### Overload Model Parameters
 lid = 0.015
 
@@ -1084,5 +1107,5 @@ if __name__ == '__main__':
     X = data.iloc[:, 3:7].values
     y = data['P_mpp_original'].values
     # z = linear_regresion(X,y)
-
+    # k = logistic_regression(X,y)
     a = 1
